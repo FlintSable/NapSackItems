@@ -107,7 +107,9 @@ var gemReactor = {
 		// select one item from each category
 		var ball1 = new Image();
 		ball1.src = gemReactor.balls.monsterball.picture;
-		$('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">')
+		$('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">').on("click", function(){
+			console.log("click is working");
+		})
 
 	},
 
