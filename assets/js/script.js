@@ -68,6 +68,7 @@ var gemReactor = {
 	playerEnergyPoints: 0,
 	deloreanDays: 0,      // add to view -- wins - these are the amount of days you can stay in the future
 	reverseDays: 0,       // add to view -- loss
+	roundCheck: false,
 
 	startUp: function(){
 		this.selectEnergyValue();
@@ -96,18 +97,22 @@ var gemReactor = {
 		// current += gemReactor.playerEnergyPoints;
 		// console.log('updated number: ' + typeof(current));
 		// $('#playerEnergyPoints').text($('h1').empty);
+		console.log("Here here this this " + this);
 		$('#playerEnergyPoints').html('<h1>' + current.toString() + '</h1>'); // needs to be string when put back in h1
-		console.log("Current Player Points: " + current + " | Added points: " + gemReactor.balls.monsterball.energy);
+		console.log("Current Player Points: " + typeof(current) + " | Added points: " + gemReactor.balls.monsterball.energy);
 		// console.log(typeof(parseInt(current)));
 		// this.displayPlayerEnergy();
 		// console.log(this.playerEnergyPoints);
-		console.log("current goal rolled " + this.energyPoints);
-		if(this.energyPoints<current){
-			console.log("overflow");
-		}
-		else if(this.energyPoints === current){
+		console.log("current goal rolled " + gemReactor.energyPoints);
+
+		if(gemReactor.energyPoints === current){
 			console.log("items have reached synchronicity");
+			gemReactor.roundCheck
 		}
+		else if(gemReactor.energyPoints < current){
+			console.log("overflow")
+		}
+
 
 	},
 
