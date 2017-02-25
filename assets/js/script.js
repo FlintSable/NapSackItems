@@ -84,15 +84,15 @@ var gemReactor = {
 		// this.playerEnergyPoints;
 		$('#playerEnergyPoints').append('<h1>' + this.playerEnergyPoints + '</h1>');
 		this.updatePlayerEnergy;
-		console.log("dispay run")
+		console.log("dispay run");
 
 	},
 
 	updatePlayerEnergy: function(){
 		gemReactor.playerEnergyPoints = gemReactor.playerEnergyPoints +  gemReactor.balls.monsterball.energy;
-		console.log(gemReactor.balls.monsterball.energy);
-		console.log(gemReactor.playerEnergyPoints);
-		var current = $('#playerEnergyPoints').text();
+		// console.log(gemReactor.balls.monsterball.energy);
+		// console.log(gemReactor.playerEnergyPoints);
+		var current = parseInt($('#playerEnergyPoints').text());
 		current += gemReactor.playerEnergyPoints;
 		console.log('updated number: ' + typeof(current));
 		$('#playerEnergyPoints').text($('h1').empty);
