@@ -16,7 +16,7 @@ var gemReactor = {
 	balls: {  // items need to be displayed and have on click functions for score addition
 		monsterball:{
 			picture: "./assets/sprites/Monster_Ball_Sprite.png",
-			energy: 1,
+			energy: 3,
 			usage: 2
 		},
 		greatball:{
@@ -82,8 +82,8 @@ var gemReactor = {
 
 	displayPlayerEnergy: function(){
 		// this.playerEnergyPoints;
+		console.log(this.playerEnergyPoints);
 		$('#playerEnergyPoints').append('<h1>' + this.playerEnergyPoints + '</h1>');
-		this.updatePlayerEnergy;
 		console.log("dispay run");
 
 	},
@@ -92,12 +92,12 @@ var gemReactor = {
 		gemReactor.playerEnergyPoints = gemReactor.playerEnergyPoints +  gemReactor.balls.monsterball.energy;
 		// console.log(gemReactor.balls.monsterball.energy);
 		// console.log(gemReactor.playerEnergyPoints);
-		var current = parseInt($('#playerEnergyPoints').text());
-		current += gemReactor.playerEnergyPoints;
-		console.log('updated number: ' + typeof(current));
-		$('#playerEnergyPoints').text($('h1').empty);
-		$('#playerEnergyPoints').html('<h1>' + current.toString() + '</h1>');
-		console.log("players points: " + current + " After points: " + gemReactor.playerEnergyPoints);
+		var current = parseInt($('#playerEnergyPoints').text()) + gemReactor.balls.monsterball.energy; // 
+		// current += gemReactor.playerEnergyPoints;
+		// console.log('updated number: ' + typeof(current));
+		// $('#playerEnergyPoints').text($('h1').empty);
+		$('#playerEnergyPoints').html('<h1>' + current.toString() + '</h1>'); // needs to be string when put back in h1
+		console.log("Current Player Points: " + current + " | Added points: " + gemReactor.balls.monsterball.energy);
 		// console.log(typeof(parseInt(current)));
 		// this.displayPlayerEnergy();
 		// console.log(this.playerEnergyPoints);
@@ -106,7 +106,7 @@ var gemReactor = {
 
 	selectEnergyValue: function(){
 		this.energyPoints = Math.floor(Math.random() * 40);
-		$('#energyPoints').append('<h1>' + this.energyPoints + '</h1>')
+		$('#energyPoints').append('<h1>' + this.energyPoints + '</h1>');
 
 	},
 
@@ -122,8 +122,8 @@ var gemReactor = {
 		// select one item from each category
 		var ball1 = new Image();
 		ball1.src = gemReactor.balls.monsterball.picture;
-		this.updatePlayerEnergy();
-		$('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">').on("click", this.updatePlayerEnergy)
+		// this.updatePlayerEnergy();
+		$('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">').on("click", this.updatePlayerEnergy);
 
 
 	},
@@ -140,7 +140,7 @@ var gemReactor = {
 
 
 
-}
+};
 
 // var ball1 = new Image();
 // ball1.src = gemReactor.balls.monsterball.picture;
@@ -175,7 +175,7 @@ $(document).ready(function() {
 
 
 
-})
+});
 // $('#target_div').html('<img src="'+ imgPaht +'" width=100 height=100 alt="Hello Image" />');
 
 
