@@ -1,10 +1,11 @@
-# week-4-game# HW - {HW Name}
+# week-4-game# {napsack items}
 
 
 ## Live Link
  - https://flintsable.github.io/week-4-game/
 
 ## Description on how to use the app
+## Press the items in the tool belt to increment your item energy
 
 ## Requirements
 #### Game has a main score and a user player score
