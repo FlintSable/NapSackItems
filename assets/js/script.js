@@ -81,17 +81,25 @@ var gemReactor = {
 	},
 
 	displayPlayerEnergy: function(){
-		this.playerEnergyPoints = 1;
+		// this.playerEnergyPoints;
 		$('#playerEnergyPoints').append('<h1>' + this.playerEnergyPoints + '</h1>');
+		this.updatePlayerEnergy;
+		console.log("dispay run")
 
+	},
+
+	updatePlayerEnergy: function(){
+		gemReactor.playerEnergyPoints = gemReactor.playerEnergyPoints +  gemReactor.balls.monsterball.energy;
+		console.log(gemReactor.balls.monsterball.energy);
+		console.log(gemReactor.playerEnergyPoints);
+		this.displayPlayerEnergy();
+		// console.log(this.playerEnergyPoints);
 
 	},
 
 	selectEnergyValue: function(){
 		this.energyPoints = Math.floor(Math.random() * 40);
 		$('#energyPoints').append('<h1>' + this.energyPoints + '</h1>')
-
-
 
 	},
 
@@ -107,9 +115,9 @@ var gemReactor = {
 		// select one item from each category
 		var ball1 = new Image();
 		ball1.src = gemReactor.balls.monsterball.picture;
-		$('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">').on("click", function(){
-			console.log("click is working");
-		})
+		this.updatePlayerEnergy();
+		$('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">').on("click", this.updatePlayerEnergy)
+
 
 	},
 
