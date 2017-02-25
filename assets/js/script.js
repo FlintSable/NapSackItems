@@ -16,22 +16,22 @@ var gemReactor = {
 	balls: {  // items need to be displayed and have on click functions for score addition
 		monsterball:{
 			picture: "./assets/sprites/Monster_Ball_Sprite.png",
-			energy: 5,
+			energy: 1,
 			usage: 2
 		},
 		greatball:{
 			picture: "rock1.jpg",
-			energy: 5,
+			energy: 2,
 			usage: 2
 		},
 		gem3:{
 			picture: "rock1.jpg",
-			energy: 5,
+			energy: 3,
 			usage: 2
 		},
 		gem4:{
 			picture: "rock1.jpg",
-			energy: 5,
+			energy: 4,
 			usage: 2
 		},
 		gem5:{
@@ -41,17 +41,17 @@ var gemReactor = {
 		},
 		gem6:{
 			picture: "rock1.jpg",
-			energy: 5,
+			energy: 6,
 			usage: 2
 		},
 		gem7:{
 			picture: "rock1.jpg",
-			energy: 5,
+			energy: 7,
 			usage: 2
 		},
 		gem8:{
 			picture: "rock1.jpg",
-			energy: 5,
+			energy: 8,
 			usage: 2
 		}
 
@@ -92,7 +92,14 @@ var gemReactor = {
 		gemReactor.playerEnergyPoints = gemReactor.playerEnergyPoints +  gemReactor.balls.monsterball.energy;
 		console.log(gemReactor.balls.monsterball.energy);
 		console.log(gemReactor.playerEnergyPoints);
-		this.displayPlayerEnergy();
+		var current = $('#playerEnergyPoints').text();
+		current += gemReactor.playerEnergyPoints;
+		console.log('updated number: ' + typeof(current));
+		$('#playerEnergyPoints').text($('h1').empty);
+		$('#playerEnergyPoints').html('<h1>' + current.toString() + '</h1>');
+		console.log("players points: " + current + " After points: " + gemReactor.playerEnergyPoints);
+		// console.log(typeof(parseInt(current)));
+		// this.displayPlayerEnergy();
 		// console.log(this.playerEnergyPoints);
 
 	},
