@@ -1,6 +1,10 @@
 
 
-h1{font-family: Bungee}
+h1 {
+	font-family: Bungee;
+	font-size: 5em;
+
+}
 
 /*#energyPoints{font-family: 'Bungee'}
 */

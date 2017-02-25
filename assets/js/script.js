@@ -101,12 +101,21 @@ var gemReactor = {
 		// console.log(typeof(parseInt(current)));
 		// this.displayPlayerEnergy();
 		// console.log(this.playerEnergyPoints);
+		console.log("current goal rolled " + this.energyPoints);
+		if(this.energyPoints<current){
+			console.log("overflow");
+		}
+		else if(this.energyPoints === current){
+			console.log("items have reached synchronicity");
+		}
 
 	},
 
 	selectEnergyValue: function(){
 		this.energyPoints = Math.floor(Math.random() * 40);
 		$('#energyPoints').append('<h1>' + this.energyPoints + '</h1>');
+		console.log("the rolled number: " + this.energyPoints);
+		return this.energyPoints;
 
 	},
 
