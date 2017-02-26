@@ -20,38 +20,45 @@ var gemReactor = {
 			energy: 3,
 			usage: 2
 		},
-		greatball:{
-			picture: "rock1.jpg",
+		mushroom:{
+			itemName: "mushroom",
+			picture: "./assets/sprites/Dream_Big_Mushroom_Sprite.png",
 			energy: 2,
 			usage: 2
 		},
-		gem3:{
-			picture: "rock1.jpg",
+		Escape_Rope:{
+			itemName: "Escape_Rope",
+			picture: "./assets/sprites/Dream_Escape_Rope_Sprite.png",
 			energy: 3,
 			usage: 2
 		},
-		gem4:{
-			picture: "rock1.jpg",
+		potion:{
+			itemName: "potion",
+			picture: "./assets/sprites/Dream_Potion_Sprite.png",
 			energy: 4,
 			usage: 2
 		},
-		gem5:{
-			picture: "rock1.jpg",
+		Oran_Berry:{
+			itemName: "Oran_Berry",
+			picture: "./assets/sprites/Dream_Oran_Berry_Sprite.png",
 			energy: 5,
 			usage: 2
 		},
-		gem6:{
-			picture: "rock1.jpg",
+		Ability_Capsule:{
+			itemName: "Ability_Capsule",
+			picture: "./assets/sprites/Dream_Ability_Capsule_Sprite.png",
 			energy: 6,
 			usage: 2
 		},
-		gem7:{
-			picture: "rock1.jpg",
-			energy: 7,
+		Soda_Pop:{
+			itemName: "Soda_Pop",
+			picture: "./assets/sprites/Dream_Soda_Pop_Sprite.png",
+			energy: 2,
 			usage: 2
 		},
-		gem8:{
-			picture: "rock1.jpg",
+		Fresh_Water:{
+			itemName: "Fresh_Water",
+			picture: "./assets/sprites/Dream_Fresh_Water_Sprite.png",
 			energy: 8,
 			usage: 2
 		}
@@ -108,10 +115,18 @@ var gemReactor = {
 
 		if(gemReactor.energyPoints === current){
 			console.log("items have reached synchronicity");
+			// run the win modal 
+			// add the win to the score 
+			// close the modal 
+			// reset the game
 			gemReactor.roundCheck
 		}
 		else if(gemReactor.energyPoints < current){
 			console.log("overflow")
+			// run the bust modal
+			// add the loss to the score
+			// close the modal 
+			// reset the game
 		}
 
 
@@ -135,13 +150,23 @@ var gemReactor = {
 
 	populateToolBelt: function(){
 		// select one item from each category
+		console.log("populate---" + this);
 		var ball1 = new Image();
 		ball1.src = gemReactor.balls.monsterball.picture;
-		console.log(this.balls.monsterball);
+		console.log("----" + this.balls.monsterball);
 
 		// this.updatePlayerEnergy(); 
 		$('#utilityBelt').append('<img ' + 'id=' + this.balls.monsterball.itemName  + ' src="'+ ball1.src + '" width="48px">');
 		$('#monsterball').on("click", this.updatePlayerEnergy);
+		var tempList = Object.keys(this.balls);
+		var inTheBelt = tempList[Math.floor(Math.random() * tempList.length)];
+		console.log(inTheBelt); 
+
+		console.log(Object.keys(this.balls));
+
+		for(i=0; i<realbelt.length; i++){
+			
+		}
 
 
 	},
