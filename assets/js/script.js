@@ -76,7 +76,7 @@ var gemReactor = {
 	playerEnergyPoints: 0,
 	deloreanDays: 0,      // add to view -- wins - these are the amount of days you can stay in the future
 	reverseDays: 0,       // add to view -- loss
-	roundCheck: false,
+	roundCheck: true,
 
 	startUp: function(){
 		this.selectEnergyValue();
@@ -98,6 +98,7 @@ var gemReactor = {
 	},
 
 	updatePlayerEnergy: function(){
+		console.log("Here here this this " + this);
 		gemReactor.playerEnergyPoints = gemReactor.playerEnergyPoints +  gemReactor.balls.monsterball.energy;
 		// console.log(gemReactor.balls.monsterball.energy);
 		// console.log(gemReactor.playerEnergyPoints);
@@ -105,24 +106,30 @@ var gemReactor = {
 		// current += gemReactor.playerEnergyPoints;
 		// console.log('updated number: ' + typeof(current));
 		// $('#playerEnergyPoints').text($('h1').empty);
-		console.log("Here here this this " + this);
 		$('#playerEnergyPoints').html('<h1>' + current.toString() + '</h1>'); // needs to be string when put back in h1
 		console.log("Current Player Points: " + typeof(current) + " | Added points: " + gemReactor.balls.monsterball.energy);
 		// console.log(typeof(parseInt(current)));
 		// this.displayPlayerEnergy();
 		// console.log(this.playerEnergyPoints);
-		console.log("current goal rolled " + gemReactor.energyPoints);
+		console.log("current goal rolled " + gemReactor.energyPoints + '| roundCheck:' + gemReactor.roundCheck);
+
 
 		if(gemReactor.energyPoints === current){
-			console.log("items have reached synchronicity");
+			console.log("items have reached synchronicity| " + this);
 			// run the win modal 
 			// add the win to the score 
 			// close the modal 
 			// reset the game
-			gemReactor.roundCheck
+			gemReactor.roundCheck = false;
+			gemReactor.resetGame();
+
 		}
 		else if(gemReactor.energyPoints < current){
-			console.log("overflow")
+			console.log("overflow | " + this);
+			gemReactor.roundCheck = false;
+			console.log(gemReactor.roundCheck);
+			gemReactor.resetGame();
+
 			// run the bust modal
 			// add the loss to the score
 			// close the modal 
@@ -130,7 +137,10 @@ var gemReactor = {
 		}
 
 
+
 	},
+
+
 
 	selectEnergyValue: function(){
 		this.energyPoints = Math.floor(Math.random() * 40);
@@ -164,15 +174,22 @@ var gemReactor = {
 
 		console.log(Object.keys(this.balls));
 
-		for(i=0; i<realbelt.length; i++){
+		// for(i=0; i<realbelt.length; i++){
 			
-		}
-
+		// }
 
 	},
 
 	resetGame: function(){
+		console.log("game will be starting soon");
+		this.playerEnergyPoints = 0;
 		this.energyPoints = 0;
+		$('#energyPoints h1').remove();
+		$('#playerEnergyPoints h1').remove();
+
+		console.log(this);
+		this.displayPlayerEnergy();
+		this.selectEnergyValue();
 
 
 	},
@@ -206,16 +223,6 @@ $(document).ready(function() {
 // $('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">')
 
 // $('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">')
-
-// $('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">')
-// $('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">')
-// $('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">')
-// $('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">')
-// $('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">')
-// $('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">')
-// $('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">')
-// $('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">')
-
 
 
 });
