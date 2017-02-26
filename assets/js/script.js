@@ -77,7 +77,7 @@ var gemReactor = {
 	deloreanDays: 0,      // add to view -- wins - these are the amount of days you can stay in the future
 	reverseDays: 0,       // add to view -- loss
 	roundCheck: true,
-	win: 0,
+	wins: 0,
 	loss: 0,
 
 	startUp: function(){
@@ -117,27 +117,19 @@ var gemReactor = {
 
 
 		if(gemReactor.energyPoints === current){
-			console.log("items have reached synchronicity| " + this);
+			gemReactor.wins += 1;
+			$('#wins').text('W: ' + Number(gemReactor.wins));
+			gemReactor.resetGame();
 			// run the win modal 
 			// add the win to the score 
 			// close the modal 
 			// reset the game
-			this.win += 1;
-			$('#win').text(this.win);
-			gemReactor.roundCheck = false;
-			gemReactor.resetGame();
 
 		}
 		else if(gemReactor.energyPoints < current){
-			console.log("overflow | " + this);
-			gemReactor.roundCheck = false;
-			console.log(gemReactor.roundCheck);
-			console.log(gemReactor.loss);
-
 			gemReactor.loss -= 1;
-			$('#loss').text(gemReactor.loss);
+			$('#loss').text('L: ' + gemReactor.loss);
 			gemReactor.resetGame();
-
 			// run the bust modal
 			// add the loss to the score
 			// close the modal 
