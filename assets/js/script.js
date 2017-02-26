@@ -77,6 +77,8 @@ var gemReactor = {
 	deloreanDays: 0,      // add to view -- wins - these are the amount of days you can stay in the future
 	reverseDays: 0,       // add to view -- loss
 	roundCheck: true,
+	win: 0,
+	loss: 0,
 
 	startUp: function(){
 		this.selectEnergyValue();
@@ -120,6 +122,8 @@ var gemReactor = {
 			// add the win to the score 
 			// close the modal 
 			// reset the game
+			this.win += 1;
+			$('#win').text(this.win);
 			gemReactor.roundCheck = false;
 			gemReactor.resetGame();
 
@@ -128,6 +132,10 @@ var gemReactor = {
 			console.log("overflow | " + this);
 			gemReactor.roundCheck = false;
 			console.log(gemReactor.roundCheck);
+			console.log(gemReactor.loss);
+
+			gemReactor.loss -= 1;
+			$('#loss').text(gemReactor.loss);
 			gemReactor.resetGame();
 
 			// run the bust modal
