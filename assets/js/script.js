@@ -15,6 +15,7 @@ var gemReactor = {
 
 	balls: {  // items need to be displayed and have on click functions for score addition
 		monsterball:{
+			itemName: "monsterball",
 			picture: "./assets/sprites/Monster_Ball_Sprite.png",
 			energy: 3,
 			usage: 2
@@ -136,8 +137,11 @@ var gemReactor = {
 		// select one item from each category
 		var ball1 = new Image();
 		ball1.src = gemReactor.balls.monsterball.picture;
-		// this.updatePlayerEnergy();
-		$('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">').on("click", this.updatePlayerEnergy);
+		console.log(this.balls.monsterball);
+
+		// this.updatePlayerEnergy(); 
+		$('#utilityBelt').append('<img ' + 'id=' + this.balls.monsterball.itemName  + ' src="'+ ball1.src + '" width="48px">');
+		$('#monsterball').on("click", this.updatePlayerEnergy);
 
 
 	},
