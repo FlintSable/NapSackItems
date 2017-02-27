@@ -88,7 +88,6 @@ var gemReactor = {
 		this.populateToolBelt();
 
 
-
 	},
 
 	displayPlayerEnergy: function(){
@@ -136,19 +135,12 @@ var gemReactor = {
 
 	},
 
-	selectLineup: function(){
-
-	},
-
-	selectPowDev: function(){
-
-	},
 
 	populateToolBelt: function(){
 
 		var tempList = Object.keys(this.balls);
 		var inTheBelt = [];
-		for(i=0; i<4; i++){
+		for(var i=0; i<4; i++){
 			inTheBelt.push(tempList[Math.floor(Math.random() * tempList.length)]);
 		}
 
@@ -161,10 +153,7 @@ var gemReactor = {
 			item.src = eval(itemsource);
 			$('#utilityBelt').append('<img ' + 'id=' + inTheBelt[j]  + ' src="'+ item.src + '" width="48px">');
 			$('#utilityBelt img').on("click", this.updatePlayerEnergy);
-
-
 			console.log(item);
-
 		}
 
 
@@ -192,12 +181,6 @@ var gemReactor = {
 
 	},
 
-	
-
-
-
-
-
 };
 
 
@@ -208,8 +191,6 @@ var gemReactor = {
 $(document).ready(function() {
 
 	gemReactor.startUp();
-
-
 });
 
 // check list for me
