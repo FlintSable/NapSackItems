@@ -127,7 +127,7 @@ var gemReactor = {
 
 		}
 		else if(gemReactor.energyPoints < current){
-			gemReactor.loss -= 1;
+			gemReactor.loss += 1;
 			$('#loss').text('L: ' + gemReactor.loss);
 			gemReactor.resetGame();
 			// run the bust modal
@@ -174,7 +174,8 @@ var gemReactor = {
 			var itemsource = 'gemReactor.balls.' + inTheBelt[j] +'.picture';
 			item.src = eval(itemsource);
 			$('#utilityBelt').append('<img ' + 'id=' + inTheBelt[j]  + ' src="'+ item.src + '" width="48px">');
-			
+			$('#utilityBelt img').on("click", this.updatePlayerEnergy);
+
 
 			console.log(item);
 
