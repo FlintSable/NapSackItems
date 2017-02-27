@@ -18,49 +18,64 @@ var gemReactor = {
 			itemName: "monsterball",
 			picture: "./assets/sprites/Monster_Ball_Sprite.png",
 			energy: 3,
-			usage: 2
+			usage: 2,
+			imageSource: 'http://bulbapedia.bulbagarden.net'
 		},
 		mushroom:{
 			itemName: "mushroom",
 			picture: "./assets/sprites/Dream_Big_Mushroom_Sprite.png",
 			energy: 2,
-			usage: 2
+			usage: 2,
+			imageSource: 'http://bulbapedia.bulbagarden.net'
+
 		},
 		Escape_Rope:{
 			itemName: "Escape_Rope",
 			picture: "./assets/sprites/Dream_Escape_Rope_Sprite.png",
 			energy: 3,
-			usage: 2
+			usage: 2,
+			imageSource: 'http://bulbapedia.bulbagarden.net'
+
 		},
 		potion:{
 			itemName: "potion",
 			picture: "./assets/sprites/Dream_Potion_Sprite.png",
 			energy: 4,
-			usage: 2
+			usage: 2,
+			imageSource: 'http://bulbapedia.bulbagarden.net'
+
 		},
 		Oran_Berry:{
 			itemName: "Oran_Berry",
 			picture: "./assets/sprites/Dream_Oran_Berry_Sprite.png",
 			energy: 5,
-			usage: 2
+			usage: 2,
+			imageSource: 'http://bulbapedia.bulbagarden.net'
+
 		},
 		Ability_Capsule:{
 			itemName: "Ability_Capsule",
 			picture: "./assets/sprites/Dream_Ability_Capsule_Sprite.png",
 			energy: 6,
-			usage: 2
+			usage: 2,
+			imageSource: 'http://bulbapedia.bulbagarden.net'
+
 		},
 		Soda_Pop:{
 			itemName: "Soda_Pop",
 			picture: "./assets/sprites/Dream_Soda_Pop_Sprite.png",
 			energy: 2,
-			usage: 2
+			usage: 2,
+			imageSource: 'http://bulbapedia.bulbagarden.net'
+
 		},
 		Fresh_Water:{
 			itemName: "Fresh_Water",
 			picture: "./assets/sprites/Dream_Fresh_Water_Sprite.png",
 			energy: 8,
-			usage: 2
+			usage: 2,
+			imageSource: 'http://bulbapedia.bulbagarden.net'
+			
 		}
 
 
