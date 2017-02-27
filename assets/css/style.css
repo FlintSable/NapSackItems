@@ -1,14 +1,24 @@
 
+html{
+	background-color: #000019;
+
+}
+
+body {
+	background-color: #000019;
+}
 
 h1 {
 	font-family: Bungee;
 	font-size: 5em;
+	color:#DEEFF5;
 
 }
 
 h3 {
 	font-family: Bungee;
 	font-size: 2.5em;
+	color:#DEEFF5;
 }
 
 
@@ -32,6 +42,7 @@ h3 {
 
 img{
 	cursor: pointer;
+	margin: 30px;
 }
 
 /*#energyPoints{font-family: 'Bungee'}
