@@ -159,22 +159,36 @@ var gemReactor = {
 	},
 
 	populateToolBelt: function(){
+
+		var tempList = Object.keys(this.balls);
+		var inTheBelt = [];
+		for(i=0; i<3; i++){
+			inTheBelt.push(tempList[Math.floor(Math.random() * tempList.length)]);
+		}
+
+		for(var j=0; j<inTheBelt.length; j++){
+			console.log(inTheBelt[j]);
+			var item = inTheBelt[j];
+			item += j;
+			item = new Image();
+			var itemsource = 'gemReactor.balls.' + inTheBelt[j] +'.picture';
+			item.src = eval(itemsource);
+			$('#utilityBelt').append('<img ' + 'id=' + inTheBelt[j]  + ' src="'+ item.src + '" width="48px">');
+			
+
+			console.log(item);
+
+		}
 		// select one item from each category
-		console.log("populate---" + this);
 		var ball1 = new Image();
 		ball1.src = gemReactor.balls.monsterball.picture;
+		console.log('ball1'+ball1);
 		console.log("----" + this.balls.monsterball);
 
 		// this.updatePlayerEnergy(); 
 		$('#utilityBelt').append('<img ' + 'id=' + this.balls.monsterball.itemName  + ' src="'+ ball1.src + '" width="48px">');
 		$('#monsterball').on("click", this.updatePlayerEnergy);
-		var tempList = Object.keys(this.balls);
-		var inTheBelt = [];
-		for(i=0; i<3; i++){
-			inTheBelt.push(tempList[Math.floor(Math.random() * tempList.length)]);
 
-
-		}
 		console.log(inTheBelt);
 		console.log(Object.keys(this.balls));
 

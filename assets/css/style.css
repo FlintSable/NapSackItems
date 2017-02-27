@@ -30,7 +30,9 @@ h3 {
 
 }
 
-
+img{
+	cursor: pointer;
+}
 
 /*#energyPoints{font-family: 'Bungee'}
 */
