@@ -5,15 +5,15 @@
 // * win - gameover logic - session checking
 // style the applicaition
 // win screen - from here restart - bootstrap modal - get new items - unlock item
-	// copy item from rewards to utility belt once won
+// copy item from rewards to utility belt once won
 // bust screen - screen becomes more transparent
 // bonus:
 // new line up of items
 // item selection menu
 
 var gemReactor = {
-
-	balls: {  // items need to be displayed and have on click functions for score addition
+// items need to be displayed and have on click functions for score addition
+	balls: {  
 		monsterball:{
 			itemName: "monsterball",
 			picture: "./assets/sprites/Monster_Ball_Sprite.png",
@@ -89,8 +89,6 @@ var gemReactor = {
 	powerUpDevice: [],    //
 	energyPoints: 0,      // reach these points  --needs to be displayed 
 	playerEnergyPoints: 0,
-	deloreanDays: 0,      // add to view -- wins - these are the amount of days you can stay in the future
-	reverseDays: 0,       // add to view -- loss
 	roundCheck: true,
 	wins: 0,
 	loss: 0,
@@ -117,14 +115,14 @@ var gemReactor = {
 	updatePlayerEnergy: function(){
 		console.log("Here here this this " + this);
 		gemReactor.playerEnergyPoints = gemReactor.playerEnergyPoints +  gemReactor.balls.monsterball.energy;
+		var current = parseInt($('#playerEnergyPoints').text()) + gemReactor.balls.monsterball.energy; // 
+		$('#playerEnergyPoints').html('<h1>' + current.toString() + '</h1>'); // needs to be string when put back in h1
+		console.log("Current Player Points: " + typeof(current) + " | Added points: " + gemReactor.balls.monsterball.energy);
 		// console.log(gemReactor.balls.monsterball.energy);
 		// console.log(gemReactor.playerEnergyPoints);
-		var current = parseInt($('#playerEnergyPoints').text()) + gemReactor.balls.monsterball.energy; // 
 		// current += gemReactor.playerEnergyPoints;
 		// console.log('updated number: ' + typeof(current));
 		// $('#playerEnergyPoints').text($('h1').empty);
-		$('#playerEnergyPoints').html('<h1>' + current.toString() + '</h1>'); // needs to be string when put back in h1
-		console.log("Current Player Points: " + typeof(current) + " | Added points: " + gemReactor.balls.monsterball.energy);
 		// console.log(typeof(parseInt(current)));
 		// this.displayPlayerEnergy();
 		// console.log(this.playerEnergyPoints);
@@ -177,7 +175,7 @@ var gemReactor = {
 
 		var tempList = Object.keys(this.balls);
 		var inTheBelt = [];
-		for(i=0; i<3; i++){
+		for(i=0; i<4; i++){
 			inTheBelt.push(tempList[Math.floor(Math.random() * tempList.length)]);
 		}
 
@@ -196,14 +194,14 @@ var gemReactor = {
 
 		}
 		// select one item from each category
-		var ball1 = new Image();
-		ball1.src = gemReactor.balls.monsterball.picture;
-		console.log('ball1'+ball1);
-		console.log("----" + this.balls.monsterball);
+		// var ball1 = new Image();
+		// ball1.src = gemReactor.balls.monsterball.picture;
+		// console.log('ball1'+ball1);
+		// console.log("----" + this.balls.monsterball);
 
-		// this.updatePlayerEnergy(); 
-		$('#utilityBelt').append('<img ' + 'id=' + this.balls.monsterball.itemName  + ' src="'+ ball1.src + '" width="48px">');
-		$('#monsterball').on("click", this.updatePlayerEnergy);
+		// // this.updatePlayerEnergy(); 
+		// $('#utilityBelt').append('<img ' + 'id=' + this.balls.monsterball.itemName  + ' src="'+ ball1.src + '" width="48px">');
+		// $('#monsterball').on("click", this.updatePlayerEnergy);
 
 		console.log(inTheBelt);
 		console.log(Object.keys(this.balls));
@@ -237,9 +235,6 @@ var gemReactor = {
 
 };
 
-// var ball1 = new Image();
-// ball1.src = gemReactor.balls.monsterball.picture;
-
 
 
 
@@ -249,26 +244,5 @@ $(document).ready(function() {
 
 	gemReactor.startUp();
 
-	// gemReactor.populateToolBelt();
-
-
-
-
-// $('#utilityBelt').append("<em>HELLO</em>");
-// $('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">')
-
-// $('#utilityBelt').append('<img src="'+ ball1.src + '" width="48px">')
-
 
 });
-// $('#target_div').html('<img src="'+ imgPaht +'" width=100 height=100 alt="Hello Image" />');
-
-
-
-
-// $("#utilityBelt").html("<img id='' + src= +\" + ball1.src+ \"");
-// $("#utilityBelt").html("<img id='' + src= + + ball1.src+ ");
-// $('#utilityBelt').append("<em>HELLO</em>");
-
-
-

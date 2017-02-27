@@ -21,6 +21,13 @@ h3 {
 	color: #DEEFF5;
 }
 
+h5 {
+	font-family: Bungee;
+	font-size: 1em;
+	color: #DEEFF5;
+}
+}
+
 
 
 .modal{
@@ -36,7 +43,7 @@ h3 {
 
 #playerEnergyPoints{
 
-	margin-top: 300px;
+	margin-top: 200px;
 
 }
 
