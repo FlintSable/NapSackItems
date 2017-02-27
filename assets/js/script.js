@@ -75,7 +75,7 @@ var gemReactor = {
 			energy: 8,
 			usage: 2,
 			imageSource: 'http://bulbapedia.bulbagarden.net'
-			
+
 		}
 
 
@@ -218,6 +218,9 @@ var gemReactor = {
 		this.energyPoints = 0;
 		$('#energyPoints h1').remove();
 		$('#playerEnergyPoints h1').remove();
+		$('#utilityBelt img').remove();
+
+		this.populateToolBelt();
 
 		console.log(this);
 		this.displayPlayerEnergy();
