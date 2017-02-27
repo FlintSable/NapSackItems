@@ -8,6 +8,7 @@
 #### Press the items in the tool belt to increment your item energy
 
 ## Requirements
+#### Internet connection for google fonts
 #### Game has a main score and a user player score
 #### The items have a numerical value that will add to the user player score
 #### When the two have matched you have a win
