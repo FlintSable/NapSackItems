@@ -1,16 +1,3 @@
-// download png items 
-// * use the obj energy value to update my score
-// * onclick for the items
-// * useage counter for items
-// * win - gameover logic - session checking
-// style the applicaition
-// win screen - from here restart - bootstrap modal - get new items - unlock item
-// copy item from rewards to utility belt once won
-// bust screen - screen becomes more transparent
-// bonus:
-// new line up of items
-// item selection menu
-
 var gemReactor = {
 // items need to be displayed and have on click functions for score addition
 	balls: {  
@@ -118,14 +105,6 @@ var gemReactor = {
 		var current = parseInt($('#playerEnergyPoints').text()) + gemReactor.balls.monsterball.energy; // 
 		$('#playerEnergyPoints').html('<h1>' + current.toString() + '</h1>'); // needs to be string when put back in h1
 		console.log("Current Player Points: " + typeof(current) + " | Added points: " + gemReactor.balls.monsterball.energy);
-		// console.log(gemReactor.balls.monsterball.energy);
-		// console.log(gemReactor.playerEnergyPoints);
-		// current += gemReactor.playerEnergyPoints;
-		// console.log('updated number: ' + typeof(current));
-		// $('#playerEnergyPoints').text($('h1').empty);
-		// console.log(typeof(parseInt(current)));
-		// this.displayPlayerEnergy();
-		// console.log(this.playerEnergyPoints);
 		console.log("current goal rolled " + gemReactor.energyPoints + '| roundCheck:' + gemReactor.roundCheck);
 
 
@@ -133,20 +112,14 @@ var gemReactor = {
 			gemReactor.wins += 1;
 			$('#wins').text('W: ' + Number(gemReactor.wins));
 			gemReactor.resetGame();
-			// run the win modal 
-			// add the win to the score 
-			// close the modal 
-			// reset the game
+
 
 		}
 		else if(gemReactor.energyPoints < current){
 			gemReactor.loss += 1;
 			$('#loss').text('L: ' + gemReactor.loss);
 			gemReactor.resetGame();
-			// run the bust modal
-			// add the loss to the score
-			// close the modal 
-			// reset the game
+
 		}
 
 
@@ -193,15 +166,7 @@ var gemReactor = {
 			console.log(item);
 
 		}
-		// select one item from each category
-		// var ball1 = new Image();
-		// ball1.src = gemReactor.balls.monsterball.picture;
-		// console.log('ball1'+ball1);
-		// console.log("----" + this.balls.monsterball);
 
-		// // this.updatePlayerEnergy(); 
-		// $('#utilityBelt').append('<img ' + 'id=' + this.balls.monsterball.itemName  + ' src="'+ ball1.src + '" width="48px">');
-		// $('#monsterball').on("click", this.updatePlayerEnergy);
 
 		console.log(inTheBelt);
 		console.log(Object.keys(this.balls));
@@ -246,3 +211,36 @@ $(document).ready(function() {
 
 
 });
+
+// check list for me
+// download png items 
+// * use the obj energy value to update my score
+// * onclick for the items
+// * useage counter for items
+// * win - gameover logic - session checking
+// style the applicaition
+// win screen - from here restart - bootstrap modal - get new items - unlock item
+// copy item from rewards to utility belt once won
+// bust screen - screen becomes more transparent
+// bonus:
+// new line up of items
+// item selection menu
+		// commands
+		// select one item from each category
+		// var ball1 = new Image();
+		// ball1.src = gemReactor.balls.monsterball.picture;
+		// console.log('ball1'+ball1);
+		// console.log("----" + this.balls.monsterball);
+
+		// // this.updatePlayerEnergy(); 
+		// $('#utilityBelt').append('<img ' + 'id=' + this.balls.monsterball.itemName  + ' src="'+ ball1.src + '" width="48px">');
+		// $('#monsterball').on("click", this.updatePlayerEnergy);
+
+		// console.log(gemReactor.balls.monsterball.energy);
+		// console.log(gemReactor.playerEnergyPoints);
+		// current += gemReactor.playerEnergyPoints;
+		// console.log('updated number: ' + typeof(current));
+		// $('#playerEnergyPoints').text($('h1').empty);
+		// console.log(typeof(parseInt(current)));
+		// this.displayPlayerEnergy();
+		// console.log(this.playerEnergyPoints);
