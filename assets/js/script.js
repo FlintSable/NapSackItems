@@ -169,14 +169,16 @@ var gemReactor = {
 		$('#utilityBelt').append('<img ' + 'id=' + this.balls.monsterball.itemName  + ' src="'+ ball1.src + '" width="48px">');
 		$('#monsterball').on("click", this.updatePlayerEnergy);
 		var tempList = Object.keys(this.balls);
-		var inTheBelt = tempList[Math.floor(Math.random() * tempList.length)];
-		console.log(inTheBelt); 
+		var inTheBelt = [];
+		for(i=0; i<3; i++){
+			inTheBelt.push(tempList[Math.floor(Math.random() * tempList.length)]);
 
+
+		}
+		console.log(inTheBelt);
 		console.log(Object.keys(this.balls));
 
-		// for(i=0; i<realbelt.length; i++){
-			
-		// }
+
 
 	},
 
