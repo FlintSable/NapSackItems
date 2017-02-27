@@ -9,6 +9,7 @@ body {
 }
 
 h1 {
+	letter-spacing: 20px;
 	font-family: Bungee;
 	font-size: 5em;
 	color: #DEEFF5;
