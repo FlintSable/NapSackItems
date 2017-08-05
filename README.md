@@ -1,4 +1,4 @@
-# week-4-game# {napsack items}
+# {napsack items game}
 
 
 ## Live Link
