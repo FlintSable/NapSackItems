@@ -2,7 +2,7 @@
 
 
 ## Live Link
- - https://flintsable.github.io/week-4-game/
+ - https://flintsable.github.io/NapSackItems/
 
 ## Description on how to use the app
 #### Press the items in the tool belt to increment your item energy
