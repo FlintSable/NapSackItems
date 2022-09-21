@@ -1,4 +1,4 @@
-var gemReactor = {
+const gemReactor = {
 // items need to be displayed and have on click functions for score addition
 	balls: {  
 		monsterball:{
@@ -192,36 +192,3 @@ $(document).ready(function() {
 
 	gemReactor.startUp();
 });
-
-// check list for me
-// download png items 
-// * use the obj energy value to update my score
-// * onclick for the items
-// * useage counter for items
-// * win - gameover logic - session checking
-// style the applicaition
-// win screen - from here restart - bootstrap modal - get new items - unlock item
-// copy item from rewards to utility belt once won
-// bust screen - screen becomes more transparent
-// bonus:
-// new line up of items
-// item selection menu
-		// commands
-		// select one item from each category
-		// var ball1 = new Image();
-		// ball1.src = gemReactor.balls.monsterball.picture;
-		// console.log('ball1'+ball1);
-		// console.log("----" + this.balls.monsterball);
-
-		// // this.updatePlayerEnergy(); 
-		// $('#utilityBelt').append('<img ' + 'id=' + this.balls.monsterball.itemName  + ' src="'+ ball1.src + '" width="48px">');
-		// $('#monsterball').on("click", this.updatePlayerEnergy);
-
-		// console.log(gemReactor.balls.monsterball.energy);
-		// console.log(gemReactor.playerEnergyPoints);
-		// current += gemReactor.playerEnergyPoints;
-		// console.log('updated number: ' + typeof(current));
-		// $('#playerEnergyPoints').text($('h1').empty);
-		// console.log(typeof(parseInt(current)));
-		// this.displayPlayerEnergy();
-		// console.log(this.playerEnergyPoints);
